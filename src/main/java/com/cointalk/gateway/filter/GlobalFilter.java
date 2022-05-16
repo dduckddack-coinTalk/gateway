@@ -25,12 +25,9 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Conf
             log.info("Header :"+request.getHeaders());
             log.info("URI :"+request.getURI());
 
-            // 토큰필터 (나중에 구현 필수)
-
             return chain.filter(exchange).then(Mono.fromRunnable(()->{log.info("GlobalFilter End");}));
         });
     }
-
 
     @Data
     //application.yml에 선언한 각 filter의 args 사용을 위한 클래스
