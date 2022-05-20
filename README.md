@@ -1,9 +1,19 @@
 # Gateway
-코인톡 게이트웨이 서버.
-### 개요
+
 코인톡 각 서버간의 라우팅 기능을 제공하고 회원 JWT토큰을 검증하는 서버입니다.
+
+### 배경(Background)
+
+MSA 환경에서 클라이언트의 요청을 알맞는 API서버로 분배하고, JWT토큰을 검증하기 위해 게이트웨이 서버를 구축해서 사용했습니다.
+
+### 목표(Goals)
+
 * 클라이언트의 요청을 알맞는 API서버에 라우팅
 * JWT토큰 검증
+
+### 계획 (Plan)
+* Spring cloud gateway사용해서 MSA 환경의 gateway 서버 구축
+* jwt-api로 JWT토큰 파싱 및 검증
 
 ### HowTo Setting
 
