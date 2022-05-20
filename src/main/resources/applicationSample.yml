@@ -21,32 +21,21 @@ spring:
       httpclient: # 타임아웃 설정
         connect-timeout: 10000
         response-timeout: 10s
-#      default-filters: # 디폴트 필터
-#        - name: GlobalFilter
-      routes:
-        - id: SlackBot Domain
+
+        - id: User Domain Sign Up, Login  # 유저 로그인, 회원가입은 JWT 토큰 인증과정 없음.
           uri:
           predicates:
-            -
+            - Method=POST
+            - Path=/user/login,/user/account
           filters:
             - GlobalFilter
-
-#        - id: User Domain Sign Up, Login  # 유저 로그인, 회원가입은 JWT 토큰 인증과정 없음.
-#          uri: http://3.39.184.27:8080/
-#          predicates:
-#            - Method=POST
-#            - Path=/user/login,/user/account
-#          filters:
-#            - GlobalFilter
 
         - id: User Domain
           uri:
           predicates:
             - Path=/user/**
           filters:
-            - GlobalFilter
-#          filters:
-#            - JwtAuthenticationFilter
+            - JwtAuthenticationFilter
 
         - id: Chatting Domain
           uri:
