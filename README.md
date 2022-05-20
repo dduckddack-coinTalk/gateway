@@ -8,13 +8,13 @@
 ### HowTo Setting
 
 
-#### SSL 설정
+#### 1. SSL 등록
 1. 도메인 생성사이트에서 도메인 생성
 2. SSL 인증사이트에서 키 파일 생성 
 3. application.yml에 해당 정보입력
 <li><a href="https://docs.google.com/document/d/1DSh2ryiDK4dcjHXDzTeHhQnvRj3HN2NZiw4jsY4n90c/edit#">SSL 키 파일 등록 위키 참고</a></li>
 
-#### Spring Clound Gateway 설정
+#### 2. aplication.yml 설정
 1. cors설정
 - corsConfigurations
 - allowedOrigins
